@@ -10,27 +10,30 @@
  *
  * Created on May 25, 2021, 4:01 PM
  */
-
+// toddo:: Change the headers to use clang's support for modules.
 #include <cstdlib>
 #include <vector>
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <filesystem>
 #include "ahnen.h"
 using namespace std;
+namespace fs = std::filesystem;
 
 int main(int argc, char** argv) 
 {
     if (argc != 2) {
 
-      cout << "Please enter the fullu qualified filename.\n";
+      cout << "Please enter the fully qualified filename.\n";
       return 0;
-    }    
-
-    // todo: Confirm the file exists
+      
+    }  else if (!fs::exists(argv[1])) {
+        
+        cout << "File '" << argv[1] << "' does not exist. Enter a valid fully qualified filename.\n";
+    }  
 
     vector<Ahnen> vec = build_ahnen(argv[1]);
-
    
     return 0;
 }

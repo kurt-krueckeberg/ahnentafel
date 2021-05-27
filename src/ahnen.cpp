@@ -5,7 +5,7 @@ using namespace  std;
 
 std::vector<Ahnen> build_ahnen(const std::string& fname)
 {
-   ifstream ifstr("/home/kurt/temp/ahnentafel.txt");
+   ifstream ifstr(fname);
    
    string input;
    vector<Ahnen> vec;
