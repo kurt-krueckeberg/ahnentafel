@@ -16,37 +16,22 @@
 #include <string>
 #include <fstream>
 #include <iostream>
-#include "token_iterator.h"
- 
+#include "ahnen.h"
 using namespace std;
-
-class Ahnen {
-    string num_;
-    string name_;
-public:
-    Ahnen(const std::string_view& num, const std::string_view& name) : num_{num}, name_{name} {}
-    Ahnen(Ahnen&& lhs) = default;
-    Ahnen(const Ahnen&) = default;
-    //...
-};
-
 
 int main(int argc, char** argv) 
 {
-    
-    ifstream ifstr("/home/kurt/temp/ahnentafel.txt");
-    
-    string input;
-    vector<Ahnen> vec;
-    
-    while (getline(ifstr, input)) {
-        
-        token_iterator<'.'> token_iter(input);
-        
-        vec.push_back({*token_iter, *++token_iter});
-        
-    }
-    
+    if (argc != 2) {
+
+      cout << "Please enter the fullu qualified filename.\n";
+      return 0;
+    }    
+
+    // todo: Confirm the file exists
+
+    vector<Ahnen> vec = build_ahnen(argv[1]);
+
+   
     return 0;
 }
 
