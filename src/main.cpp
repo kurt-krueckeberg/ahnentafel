@@ -36,13 +36,19 @@ int main(int argc, char** argv)
 
     vector<Ahnen> vec = build_ahnen(argv[1]);
 
+    auto prev_father = 1;
+
     for (auto i = 0; i < vec.size(); ++i) {
 
        auto father_anum = stoi(vec[i].number();
 
-       if ((father_anum % 2) == 0) { // Is even -> father
-          
-           if (
+       
+       if ((father_anum % 2) == 0) { // even -> father
+
+           // Does a mother exist for this father?
+           auto j = i + 1;
+
+           if (stoi(vec[j].number()) = father_anum + 1);
        }
     }   
     return 0;
