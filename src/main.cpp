@@ -1,23 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   main.cpp
- * Author: kurt
- *
- * Created on May 25, 2021, 4:01 PM
- */
-// toddo:: Change the headers to use clang's support for modules.
 #include <cstdlib>
 #include <vector>
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 #include <filesystem>
 #include "ahnen.h"
+        
+/*
+ TODO: Add leading zeros by using setw(x), where x is the length of the last number in the vector:
+   vec[vec.size() - 1].number().size();
+
+TODO: Determine how to pad with leading zeros?
+*/
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -38,18 +33,35 @@ int main(int argc, char** argv)
 
     auto prev_father = 1;
 
-    for (auto i = 0; i < vec.size(); ++i) {
+    ofstream ofstr("./data/output.txt");
 
-       auto father_anum = stoi(vec[i].number();
+     auto anum_width = vec[vec.size() - 1].number().size();
 
+    for (auto i = 0; i < vec.size();) {
        
-       if ((father_anum % 2) == 0) { // even -> father
+       auto father_anum = stoi(vec[i].number());
 
-           // Does a mother exist for this father?
-           auto j = i + 1;
+       auto remainder = father_anum % 2;
 
-           if (stoi(vec[j].number()) = father_anum + 1);
+      // Does a mother exist for this father?
+       // The next entry is even, a man, so we create an "Unknown" wife.
+       ofstr << setw(anum_width) << setfill('0') << father_anum << '_' << setw(anum_width) << setfill('0') << father_anum + 1 << " [ " << vec[i].name() << " ]  [ ";
+ 
+       auto mother_index = i + 1;
+       
+       if (stoi(vec[mother_index].number()) != father_anum + 1) {
+           
+             ofstr << "Unknown";
+             
+             ++i;
+             
+       } else {
+           
+          ofstr << vec[mother_index].name();
+          
+          i+=2;
        }
+       ofstr << " ]\n";
     }   
     return 0;
 }

@@ -28,6 +28,5 @@ public:
 };
 
 std::vector<Ahnen> build_ahnen(const std::string& fname);
-
 #endif /* AHNEN_H */
 
