@@ -1,0 +1,10 @@
+.dep.inc
+Makefile
+Debug/
+Release/
+.settings
+.cproject
+.project
+/nbproject
+/build/
+/dist/
