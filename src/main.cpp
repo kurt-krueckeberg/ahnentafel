@@ -18,6 +18,7 @@
 #include <iostream>
 #include <filesystem>
 #include "ahnen.h"
+
 using namespace std;
 namespace fs = std::filesystem;
 
@@ -34,7 +35,16 @@ int main(int argc, char** argv)
     }  
 
     vector<Ahnen> vec = build_ahnen(argv[1]);
-   
+
+    for (auto i = 0; i < vec.size(); ++i) {
+
+       auto father_anum = stoi(vec[i].number();
+
+       if ((father_anum % 2) == 0) { // Is even -> father
+          
+           if (
+       }
+    }   
     return 0;
 }
 
