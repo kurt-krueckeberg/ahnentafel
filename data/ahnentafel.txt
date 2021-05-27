@@ -62,13 +62,13 @@
 81. Wildburga Ensinger
 84. Friederich Maier
 85. Maria Agnes Bossler
-104. unknown_firstname Feld
+104. Unknown_firstname Feld
 105. Elisabeth Unknown
 106. Johann Jungmann
 107. Anna Jungfleisch
 112. Johann Bartold Beerman
 113. Unknown
 120. Johann Paul Zollinger
-121. Johannette Margarethe Unknown 
+121. Johannette Margarethe Unknown_Surname
 128. Gottlieb Krückeberg
-129. Unknown spouse of Gottlieb Krückeberg
+129. Unknown
