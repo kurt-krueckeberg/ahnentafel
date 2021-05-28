@@ -1,1 +1,1 @@
-Remove the #include's and test that clang's module support works.
+Get rid of the right and left name padding and adjustments.
